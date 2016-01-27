@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Github user search</title>
+
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -17,12 +19,15 @@
     <div>
       <form class="form-horizontal">
         <input type="text" ng-model="searchCtrl.searchTerm"
-          ng-change="searchCtrl.doSearch()"
+          ng-change="searchCtrl.searchTerm && searchCtrl.doSearch()"
           ng-model-options="{ updateOn: 'default blur',
                               debounce: {'default': 500, 'blur': 0} }">
-        <button class="btn" ng-click="searchCtrl.doSearch()">Search</button>
+        <button class="btn" ng-click="searhCtrl.searchTerm && searchCtrl.doSearch()">
+          Search
+        </button>
       </form>
-        <ul class="list-group">
+
+        <ul class="list-group" ng-show="searchCtrl.searchTerm">
           <li ng-repeat="user in searchCtrl.searchResult.items">
             <img ng-src="{{user.avatar_url}}&s=50">
             <a ng-href="{{user.html_url}}">{{user.login}}</a>
