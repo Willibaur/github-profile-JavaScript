@@ -30,7 +30,7 @@
     <h3 ng-show="searchCtrl.searchTerm">Search for {{searchCtrl.searchTerm}}</h3>
         <ul class="list-group" ng-show="searchCtrl.searchTerm">
           <li ng-repeat="user in searchCtrl.searchResult.items">
-            <img ng-src="{{user.avatar_url}}" width="600" height="600">
+            <img ng-src="{{user.avatar_url}}" width="100" height="100">
             <a ng-href="{{user.html_url}}">{{user.login}}</a>
           </li>
         </ul>

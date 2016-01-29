@@ -23,6 +23,6 @@ describe('GitHub profile finder', function() {
     searchButton.click();
 
     var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
-    expect(profiles.last().getText()).toEqual('ptolemy-theorem');
+    expect(profiles.last().getText()).toEqual('ptolemy');
   });
 });
